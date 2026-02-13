@@ -1,0 +1,83 @@
+/* Estilos para el Minijuego Arcade */
+.game-panel {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.game-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background: #000;
+    padding: 10px;
+    border: 1px solid #333;
+}
+
+canvas {
+    background: linear-gradient(to bottom, #001 0%, #000 100%);
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.1);
+    image-rendering: pixelated;
+    /* Para estilo retro */
+}
+
+/* UI del Juego (HUD) */
+.game-ui {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.hud-item {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    color: var(--primary-color);
+    text-shadow: 1px 1px 0 #000;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+}
+
+/* Overlay de Inicio/Game Over */
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 2rem;
+    border: 2px solid var(--primary-color);
+    width: 80%;
+}
+
+.overlay.hidden {
+    display: none;
+}
+
+.overlay h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    animation: blink 1s infinite;
+}
+
+.overlay p {
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
